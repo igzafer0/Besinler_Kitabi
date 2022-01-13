@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/fragment_besin_detayi.xml" value="0.1015625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21197916666666666" />
+        <entry key="app/src/main/res/layout/besin_row.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/fragment_besin_detayi.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_besin_listesi.xml" value="0.1015625" />
       </map>
     </option>

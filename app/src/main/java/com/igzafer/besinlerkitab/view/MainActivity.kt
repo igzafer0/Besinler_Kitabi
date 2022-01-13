@@ -1,7 +1,8 @@
-package com.igzafer.besinlerkitab
+package com.igzafer.besinlerkitab.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.igzafer.besinlerkitab.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
