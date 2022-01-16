@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="besin"
+        type="com.igzafer.besinlerkitab.model.BesinModel" />
+    <variable
+        name="listener"
+        type="com.igzafer.besinlerkitab.adapter.IBesinClickListener" />
+</data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:onClick="@{listener::besinTiklandi}"
         android:orientation="horizontal">
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/besinUuid"
+            android:visibility="gone"
+            android:text="@{String.valueOf(besin.uuid)}"
+            />
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:id="@+id/besinFoto"
             android:layout_margin="3dp"
+            android:downloadImage="@{besin.besinGorsel}"
             tools:ignore="Suspicious0dp" />
 
         <LinearLayout
@@ -30,7 +48,7 @@
                 android:textSize="20sp"
                 android:id="@+id/besinIsim"
                 android:textStyle="bold"
-                android:text="Besin ismi" />
+                android:text="@{besin.besinIsim}" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -39,7 +57,7 @@
                 android:id="@+id/besinKalori"
                 android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
-                android:text="Besin Kalorisi" />
+                android:text="@{besin.besinKalori}" />
         </LinearLayout>
     </LinearLayout>
 

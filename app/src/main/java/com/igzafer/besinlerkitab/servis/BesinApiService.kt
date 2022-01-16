@@ -1,6 +1,6 @@
 package com.igzafer.besinlerkitab.servis
 
-import com.igzafer.besinlerkitab.model.besinModel
+import com.igzafer.besinlerkitab.model.BesinModel
 import io.reactivex.Single
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -14,7 +14,7 @@ class BesinApiService {
         .build()
         .create(IBesinApi::class.java)
 
-    fun getData() : Single<List<besinModel>>{
+    fun getData() : Single<List<BesinModel>>{
         return api.getBesin()
     }
 }

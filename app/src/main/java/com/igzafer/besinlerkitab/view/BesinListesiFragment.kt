@@ -43,7 +43,7 @@ class BesinListesiFragment : Fragment() {
         listRecy.adapter = adapter
 
         listSwipe.setOnRefreshListener {
-            viewModel.refreshData()
+            viewModel.refreshFromInternet()
             listSwipe.isRefreshing=false
         }
         observeLiveData()

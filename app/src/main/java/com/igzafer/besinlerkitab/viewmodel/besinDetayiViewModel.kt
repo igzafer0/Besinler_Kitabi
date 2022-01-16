@@ -1,22 +1,20 @@
 package com.igzafer.besinlerkitab.viewmodel
 
+import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.igzafer.besinlerkitab.model.besinModel
+import com.igzafer.besinlerkitab.model.BesinModel
+import com.igzafer.besinlerkitab.servis.besinDatabase
+import kotlinx.coroutines.launch
 
-class besinDetayiViewModel : ViewModel() {
+class  besinDetayiViewModel(application: Application) : baseViewModel(application) {
 
-    val besinLiveData = MutableLiveData<besinModel>()
+    val besinLiveData = MutableLiveData<BesinModel>()
 
-    fun roomVerisiniAl() {
-        val armut = besinModel(
-            "Armut",
-            "1000",
-            "0",
-            "1",
-            "0",
-            "https://seyler.ekstat.com/img/max/800/J/JS0yLXdQ9n46fHNi-636190377994184197.jpg"
-        )
-        besinLiveData.value = armut
+    fun roomVerisiniAl(id: Int) {
+        launch {
+            val dao = besinDatabase(getApplication()).besinDao()
+            val besin = dao.getSingleBesin(id)
+            besinLiveData.value=besin
+        }
     }
 }

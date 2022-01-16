@@ -1,6 +1,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+<data>
+    <variable
+        name="besin"
+        type="com.igzafer.besinlerkitab.model.BesinModel" />
+</data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,7 +16,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:minHeight="200dp"
+            android:downloadImage="@{besin.besinGorsel}"
             android:scaleType="fitCenter"
+            android:id="@+id/besinFotograf"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
@@ -21,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:textSize="17sp"
-            android:text="Besin ismi"
+            android:text="@{besin.besinIsim}"
             android:textStyle="bold" />
 
         <TextView
@@ -29,26 +35,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="Besin kalorisi" />
+            android:text="@{besin.besinKalori}" />
 
         <TextView
             android:id="@+id/besinKarbonhidrat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="Besin karbonhidratı" />
+            android:text="@{besin.besinKarbonhidrat}" />
 
         <TextView
             android:id="@+id/besinProtein"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="Besin proteini" />
+            android:text="@{besin.besinProtein}" />
 
         <TextView
             android:id="@+id/besinYag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Besin yağı" />
+            android:text="@{besin.besinYag}" />
     </LinearLayout>
 </layout>
